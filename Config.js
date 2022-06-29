@@ -13,7 +13,7 @@ let ran = null; // độ khó mặc định
 
 const EASY = 60; // mức dễ
 const MEDIUM = 45; // mức trung bình
-const HARD = 3; // mức khó
+const HARD = 30; // mức khó
 
 // tạo file âm thanh cho game
 let status_music = true;
