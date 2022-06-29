@@ -1,12 +1,12 @@
 
 // ảnh điều khiển game
 const img = {
-  home: "../images/home.jpg",
-  over: "../images/over.jpg",
-  lv1: "../images/level1.jpg",
-  lv2: "../images/level2.jpg",
-  lv3: "../images/level3.jpg",
-  guide: "../images/guide.jpg",
+  home: "home.jpg",
+  over: "over.jpg",
+  lv1: "level1.jpg",
+  lv2: "level2.jpg",
+  lv3: "level3.jpg",
+  guide: "guide.jpg",
 };
 let level = 1;
 let ran = null; // độ khó mặc định
@@ -20,8 +20,8 @@ let status_music = true;
 const audio = new Audio(
   "https://audio-previews.elements.envatousercontent.com/files/136199140/preview.mp3"
 );
-const music = new Audio("../audio/audio.mp3");
-const True = new Audio("../audio/tinh.mp3");
+const music = new Audio("au.mp3");
+const True = new Audio("tinh.mp3");
 const game = new Setting(audio);
 const dk = new Ran(audio);
 let t = new countDown();
