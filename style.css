@@ -1,0 +1,177 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    /* background-color: powderblue; */
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+}
+
+.head{
+    height: 13%;
+    /* background-color: rgb(210, 205, 240); */
+}
+.main{
+    height: 68%;
+    /* background-color: rgb(98, 91, 138); */
+}
+
+.foot, .bt_left, .bt_right{
+    width: 19%;
+    /* background-color: rgb(164, 156, 207); */
+}
+
+.bt_center{
+    width: 62%;
+    /* padding: 4px; */
+}
+
+.container .head .name_g{
+    font-family: 'Fascinate', cursive;
+    text-align: center;
+    padding: 20px 10px 10px 20px;
+    font-size: 50px;
+    font-style: italic;
+    text-shadow: 5px 2px 4px rgb(201, 171, 171);
+}
+
+ul li{
+    list-style: none;
+    padding: 10px;
+    /* visibility: hidden; */
+}
+
+.bt_left li{
+    margin-left: 71%;
+}
+
+.bt_right li{
+    margin-left: 8%;
+}
+
+/* dat kieu cho cac nut chuc nang */
+.bt_left .bt_, .bt_right .bt_{
+    background-color:rgb(144, 208, 114);
+    cursor: -webkit-grab; 
+    cursor: grab;
+    font-size: 12px;
+    width: 52px;
+    height: 52px;
+    border: 1px solid white;
+    /* padding: 10px; */
+    border-radius: 50%;
+    font-style: italic;
+    font-weight: bold;
+}
+.bt_left .bt_:hover, .bt_right .bt_:hover{
+    animation: pulsate 1s 
+    ease-in-out;
+}
+@keyframes pulsate {
+    0%{
+        box-shadow: 0 0 25px #5ddcff, 0 0 50px #4e00c2;
+    }
+}
+
+.bt_play{
+    position: absolute;
+    top: 65vh;
+    left: 42vw;
+    width: 250px;
+    height: 50px;
+    color: #fff;
+    padding: 10px 30px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    color:rgb(37, 34, 57);
+    border: 1px solid #272525;
+    cursor: -webkit-grab; 
+    cursor: grab;
+    background-color: rgb(108, 184, 60);
+    font-family: 'Fascinate', cursive;
+    display: none;
+    /* text-shadow: 0px 4px 8px rgb(229, 233, 223);     */
+}
+
+.main{
+    display: flex;
+    flex-wrap: wrap;
+}
+#gui{
+    width: 100%;
+    height: 100%;
+}
+
+.bt_play:hover{
+    background-color: rgb(144, 208, 114);
+}
+.bt_play:active, .bt_:active{
+    background-color: rgb(79, 161, 186);
+}
+
+.footer{
+    position: absolute;
+    left: 47%;
+    top: 88%;
+}
+
+.bt_level{
+    position: absolute;
+    left: -430%;
+    top: 15%;
+    font-size: 23px;
+    border: hidden;
+    background: white;
+    width: 100px;
+    font-weight: bold;
+    font-style: italic;
+    visibility: hidden;  
+}
+
+.bt_center .bt_find{
+    /* border: 2px solid red; */
+    border: none;
+    color: red;
+    border-radius: 50%;
+    /* padding: 20px; */
+    font-size: 80px;
+    position: absolute;
+    top:53%;
+    left: 20%;
+    visibility: hidden;
+}
+#find2{
+    left: 52%;
+}
+
+.bt_time{
+    position: absolute;
+    left: 430px;
+    top: 15%;
+    background: white;
+    font-size: 23px;
+    border: hidden;
+    width: 100px;    
+    font-weight: bold;
+    font-style: italic;    
+    visibility: hidden;   
+}
+.footer .bt_pause{
+    background:rgb(144, 208, 114);
+    border-radius: 6px;
+    text-align: center;
+    padding: 4px;
+    border: hidden;
+    width: 100px;
+    height: 50px;
+    font-family: 'Fascinate', cursive;
+    font-size: 20px;
+}
+#pause_game{
+    visibility: hidden;
+}

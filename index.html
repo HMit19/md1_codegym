@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fascinate&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fascinate&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Case Study</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="head">
+        <h1 class="name_g" id="title">Find Different Points Games</h1>
+      </div>
+      <div class="main">
+        <div class="bt_left">
+          <ul>
+            <li>
+              <button
+                type="button"
+                class="bt_"
+                onclick="game.New_game()"
+                id="new"
+              >
+                New
+              </button>
+            </li>
+            <li>
+              <button
+                class="bt_"
+                type="button"
+                onclick="game.On_music()"
+                id="music_on"
+              >
+                Music
+              </button>
+            </li>
+            <li>
+              <button
+                class="bt_"
+                type="button"
+                onclick="game.Guide()"
+                id="guide"
+              >
+                Guide
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bt_center">
+          <img src="../images/home.jpg" alt="picture" id="gui" />
+          <button class="bt_find" type="button" onclick="check()" id="find1">
+            <i class="fa-solid fa-check"> </i>
+          </button>
+          <button class="bt_find" type="button" onclick="check()" id="find2">
+            <i class="fa-solid fa-check"> </i>
+          </button>
+          <button
+            type="button"
+            class="bt_play"
+            onclick="game.Start()"
+            id="st_game"
+          >
+            Click for start
+          </button>
+        </div>
+
+        <div class="bt_right">
+          <ul>
+            <li>
+              <button class="bt_" type="button" onclick="dk.easy()" id="easy">
+                Easy
+              </button>
+            </li>
+            <li>
+              <button
+                class="bt_"
+                type="button"
+                onclick="dk.medium()"
+                id="medium"
+              >
+                Medium
+              </button>
+            </li>
+            <li>
+              <button class="bt_" type="button" onclick="dk.hard()" id="hard">
+                Hard
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer">
+        <p class="bt_level" id="lv">Level: <span id="level_game">1</span></p>
+        <button
+          class="bt_pause"
+          type="button"
+          onclick="game.Pause_Continue()"
+          id="pause_game"
+        >
+          Pause
+        </button>
+        <p class="bt_time" id="ti">Time: <span id="time_game"></span></p>
+      </div>
+    </div>
+  </body>
+  <script src="../js/ran.js"></script>
+  <script src="../js/clock.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/setProperty.js"></script>
+  <script src="../js/config.js"></script>
+</html>
