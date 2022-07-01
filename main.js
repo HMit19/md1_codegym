@@ -1,8 +1,7 @@
-class Setting {
+class Game {
   constructor(audio) {
     this.audio = audio;
   }
-
   New_game() {
     this.audio.play();
     let result = confirm("Bạn có chắc chơi mới không?");
@@ -10,133 +9,121 @@ class Setting {
       location.reload();
     }
   }
-
-  On_music() {
-    if (status_music) {
+  onMusic() {
+    if (statusMusic) {
       music.play();
-      status_music = false;
-      set.setBackground('music_on', 'rgb(79, 161, 186)');
-      set.setText('music_on', 'none');
+      statusMusic = false;
+      setProperty.setBackground('music_on', 'rgb(79, 161, 186)');
+      setProperty.setText('music_on', 'none');
     } else {
       music.pause();
-      status_music = true;
-      set.setBackground('music_on', 'rgb(144, 208, 114)');
-      set.setText('music_on', 'line-through');
+      statusMusic = true;
+      setProperty.setBackground('music_on', 'rgb(144, 208, 114)');
+      setProperty.setText('music_on', 'line-through');
     }
   }
 
   Guide() {
-    if (status_guide) {
-      set.setImg('gui', img.guide);
-      set.setBackground('guide', 'tomato');
-      status_guide = false;
+    if (statusGuide) {
+      setProperty.setImage('gui', images.imageGuide);
+      setProperty.setBackground('guide', 'tomato');
+      statusGuide = false;
     } else {
-      set.setImg('gui', img.home);
-      set.setBackground('guide', 'rgb(144, 208, 114)');
-      status_guide = true;
+      setProperty.setImage('gui', images.imageGame);
+      setProperty.setBackground('guide', 'rgb(144, 208, 114)');
+      statusGuide = true;
     }
   }
 
-  Start() {
+  startGame() {
     this.audio.play();
-    if (ran == null) {
+    if (difficultyTime == null) {
       alert("Vui lòng chọn độ khó!");
     } else {
-      if (ran == EASY) {
-        set.setVisibility('medium', 'hidden');
-        set.setVisibility('hard', 'hidden');
-      } else if (ran == MEDIUM) {
-        set.setVisibility('easy', 'hidden');
-        set.setVisibility('hard', 'hidden');
-      } else if (ran == HARD) {
-        set.setVisibility('medium', 'hidden');
-        set.setVisibility('easy', 'hidden');
+      if (difficultyTime == EASY) {
+        setProperty.setVisibility('medium', 'hidden');
+        setProperty.setVisibility('hard', 'hidden');
+      } else if (difficultyTime == MEDIUM) {
+        setProperty.setVisibility('easy', 'hidden');
+        setProperty.setVisibility('hard', 'hidden');
+      } else if (difficultyTime == HARD) {
+        setProperty.setVisibility('medium', 'hidden');
+        setProperty.setVisibility('easy', 'hidden');
       }
-      if (level == 1) {
-        set.setImg('gui', img.lv1);
-      } else if (level == 2) {
-        set.setImg('gui', img.lv2);
-      }
-      set.setDisplay('st_game', 'none');
-      set.setVisibility('pause_game', 'visible');
-      set.setVisibility('guide', 'hidden');
-      this.On_music();
+      setProperty.setImage('gui', images.imageLevel1);
+      setProperty.setDisplay('st_game', 'none');
+      setProperty.setVisibility('pause_game', 'visible');
+      setProperty.setVisibility('guide', 'hidden');
+      this.onMusic();
     }
-    set.setVisibility('find1', 'visible');
-    set.setVisibility('find2', 'visible');
-    set.setOpacity('find1', '0');
-    set.setOpacity('find2', '0');
-    status_start = true;
-    t.start();
+    setProperty.setVisibility('find1', 'visible');
+    setProperty.setVisibility('find2', 'visible');
+    setProperty.setOpacity('find1', '0');
+    setProperty.setOpacity('find2', '0');
+    statusGameStart = true;
+    timeDown.start();
   }
 
-  Up_Level() {
+  upLevel() {
     if (level == 2) {
-      set.setContent('level_game', level);
-      set.setImg('gui', img.lv2);
-      set.setSize('find1', '42%', '20%');
-      set.setSize('find2', '42%', '52%');
-      bool = false;
+      setProperty.setContent('level_game', level);
+      setProperty.setImage('gui', images.imageLevel2);
+      setProperty.setSize('find1', '42%', '20%');
+      setProperty.setSize('find2', '42%', '52%');
+      selectTrue = false;
     }
     if (level == 3) {
-      set.setContent('level_game', level);
-      set.setImg('gui', img.lv3);
-      set.setSize('find1', '54%', '38%');
-      set.setSize('find2', '54%', '69.5%');
-      bool = false;
+      setProperty.setContent('level_game', level);
+      setProperty.setImage('gui', images.imageLevel3);
+      setProperty.setSize('find1', '54%', '38%');
+      setProperty.setSize('find2', '54%', '69.5%');
+      selectTrue = false;
     }
     if (level == 4) {
-      set.setImg('gui', img.home);
-      set.setVisibility('pause_game', 'hidden');
-      set.setVisibility('ti', 'hidden');
-      set.setVisibility('lv', 'hidden');
+      setProperty.setImage('gui', images.imageWin);
+      setProperty.setVisibility('pause_game', 'hidden');
+      setProperty.setVisibility('timeContainer', 'hidden');
+      setProperty.setVisibility('levelContainer', 'hidden');
+      if(!statusMusic){this.onMusic();}
     }
-    tg = ran;
+    timeTg = difficultyTime;
   }
 
   Again() {
-    tg = ran;
     if (level == 1) {
-      set.setImg('gui', img.lv1);
-      set.setContent('pause_game', 'Pause');
-      tg = ran;
-      again = false;
+      setProperty.setImage('gui', images.imageLevel1);
     }
     if (level == 2) {
-      set.setContent('level_game', level);
-      set.setContent('pause_game', 'Pause');
-      set.setImg('gui', img.lv2);
-      tg = ran;
-      again = false;
+      setProperty.setImage('gui', images.imageLevel2);
     }
     if (level == 3) {
-      set.setContent('level_game', level);
-      set.setContent('pause_game', 'Pause');
-      set.setImg('gui', img.lv3);
-      tg = ran;
-      again = false;
+      setProperty.setImage('gui', images.imageLevel3);
     }
+    setProperty.setContent('level_game', level);
+    setProperty.setContent('pause_game', 'Pause');
+    timeTg = difficultyTime + 1;
+    playAgain = false;
   }
 
   Pause_Continue() {
     this.audio.play();
-    if (again) {
+    if (playAgain) {
       this.Again();
     } else {
-      if (bool) {
-        game.Up_Level();
-        set.setOpacity('find1', '0');
-        set.setOpacity('find2', '0');
-        set.setContent('pause_game', 'Pause');
+      if (selectTrue) {
+        game.upLevel();
+        setProperty.setOpacity('find1', '0');
+        setProperty.setOpacity('find2', '0');
+        setProperty.setContent('pause_game', 'Pause');
       } else {
-        if (status_pause) {
-          status_pause = false;
-          set.setDisplay('gui', 'inline');
-          set.setContent('pause_game', 'Pause');
+        if (statusPause) {
+          statusPause = false;
+          setProperty.setDisplay('gui', 'inline');
+          setProperty.setContent('pause_game', 'Pause');
         } else {
-          set.setDisplay('gui', 'none');
-          set.setContent('pause_game', 'Continue');
-          status_pause = true;
+          setProperty.setDisplay('gui', 'none');
+          setProperty.setContent('pause_game', 'Continue');
+          statusPause = true;
         }
       }
     }
