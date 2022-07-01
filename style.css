@@ -3,7 +3,7 @@
     margin: 0px;
 }
 body{
-    /* background-color: powderblue; */
+    background-color: powderblue;
 }
 
 .container{
@@ -105,6 +105,7 @@ ul li{
 #gui{
     width: 100%;
     height: 100%;
+    border-radius: 20px;
 }
 
 .bt_play:hover{
@@ -117,16 +118,16 @@ ul li{
 .footer{
     position: absolute;
     left: 47%;
-    top: 88%;
+    top: 87%;
 }
 
 .bt_level{
     position: absolute;
-    left: -430%;
+    left: -418%;
     top: 15%;
     font-size: 23px;
     border: hidden;
-    background: white;
+    background: powderblue;
     width: 100px;
     font-weight: bold;
     font-style: italic;
@@ -151,9 +152,9 @@ ul li{
 
 .bt_time{
     position: absolute;
+    background: powderblue;
     left: 430px;
     top: 15%;
-    background: white;
     font-size: 23px;
     border: hidden;
     width: 100px;    
