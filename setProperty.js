@@ -16,7 +16,7 @@ class Set{
     setOpacity(id, op){
         document.getElementById(id).style.opacity = [op];
     }
-    setImg(id, url){
+    setImage(id, url){
         document.getElementById(id).src = [url];
     }
     setContent(id, content){
