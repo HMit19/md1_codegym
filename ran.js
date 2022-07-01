@@ -1,48 +1,48 @@
 // settings do kho
-class Ran {
+class Difficulty {
   constructor(audio) {
     this.audio = audio;
   }
   easy() {
     this.audio.play();
-    ran = EASY;
-    set.setContent('time_game', ran);
-    set.setBackground('hard', "rgb(144, 208, 114)");
-    set.setBackground('medium', "rgb(144, 208, 114)");
-    set.setBackground('easy', "tomato");
-    if (!status_start) {
-      set.setDisplay('st_game', 'inline');
-      set.setVisibility('ti', 'visible');
-      set.setVisibility('lv', 'visible');
+    difficultyTime = EASY;
+    setProperty.setContent('time_game', difficultyTime);
+    setProperty.setBackground('hard', "rgb(144, 208, 114)");
+    setProperty.setBackground('medium', "rgb(144, 208, 114)");
+    setProperty.setBackground('easy', "tomato");
+    if (!statusGameStart) {
+      setProperty.setDisplay('st_game', 'inline');
+      setProperty.setVisibility('timeContainer', 'visible');
+      setProperty.setVisibility('levelContainer', 'visible');
     }
-    status_ran = false;
+    statusDifficulty = false;
   }
   medium() {
     this.audio.play();
-    ran = MEDIUM;
-    set.setContent('time_game', ran);
-    set.setBackground('easy', "rgb(144, 208, 114)");
-    set.setBackground('hard', "rgb(144, 208, 114)");
-    set.setBackground('medium', "tomato");
-    if (!status_start) {
-      set.setDisplay('st_game', 'inline');
-      set.setVisibility('ti', 'visible');
-      set.setVisibility('lv', 'visible');
+    difficultyTime = MEDIUM;
+    setProperty.setContent('time_game', difficultyTime);
+    setProperty.setBackground('easy', "rgb(144, 208, 114)");
+    setProperty.setBackground('hard', "rgb(144, 208, 114)");
+    setProperty.setBackground('medium', "tomato");
+    if (!statusGameStart) {
+      setProperty.setDisplay('st_game', 'inline');
+      setProperty.setVisibility('timeContainer', 'visible');
+      setProperty.setVisibility('levelContainer', 'visible');
     }
-    status_ran = false;
+    statusDifficulty = false;
   }
   hard() {
     this.audio.play();
-    ran = HARD;
-    set.setContent('time_game', ran);
-    set.setBackground('easy', "rgb(144, 208, 114)");
-    set.setBackground('medium', "rgb(144, 208, 114)");
-    set.setBackground('hard', "tomato");
-    if (!status_start) {
-      set.setDisplay('st_game', 'inline');
-      set.setVisibility('ti', 'visible');
-      set.setVisibility('lv', 'visible');
+    difficultyTime = HARD;
+    setProperty.setContent('time_game', difficultyTime);
+    setProperty.setBackground('easy', "rgb(144, 208, 114)");
+    setProperty.setBackground('medium', "rgb(144, 208, 114)");
+    setProperty.setBackground('hard', "tomato");
+    if (!statusGameStart) {
+      setProperty.setDisplay('st_game', 'inline');
+      setProperty.setVisibility('timeContainer', 'visible');
+      setProperty.setVisibility('levelContainer', 'visible');
     }
-    status_ran = false;
+    statusDifficulty = false;
   }
 }
