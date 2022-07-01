@@ -1,24 +1,25 @@
 
-// lớp thời gian đếm ngược
+// time count down
 class countDown {
-  constructor() {}
+  constructor() {
+  }
   start() {
-    tg = ran;
-    let counter = setInterval(t.run, 1000);
+    timeTg = difficultyTime;
+    let counter = setInterval(timeDown.run, 1000);
   }
   run() {
-    if (!status_pause && !bool) {
-      tg--;
+    if (!statusPause && !selectTrue) {
+      timeTg--;
     }
-    if (tg == 0 && !bool) {
-      set.setImg('gui', img.over);
-      set.setContent('pause_game', 'Again');
-      again = true;
+    if (timeTg == 0 && !selectTrue) {
+      setProperty.setImage('gui', images.imageGameOver);
+      setProperty.setContent('pause_game', 'Again');
+      playAgain = true;
     }
-    if (tg <= -1) {
+    if (timeTg <= -1) {
       clearInterval(counter);
       return;
     }
-    set.setContent('time_game', tg);
+    setProperty.setContent('time_game', timeTg);
   }
 }
