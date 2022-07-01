@@ -1,53 +1,55 @@
-
-// ảnh điều khiển game
-const img = {
-  home: "home.jpg",
-  over: "over.jpg",
-  lv1: "level1.jpg",
-  lv2: "level2.jpg",
-  lv3: "level3.jpg",
-  guide: "guide.jpg",
+// config of game
+const images = {
+  imageGame: "../images/home.jpg",
+  imageGameOver: "../images/over.jpg",
+  imageLevel1: "../images/level1.jpg",
+  imageLevel2: "../images/level2.jpg",
+  imageLevel3: "../images/level3.jpg",
+  imageGuide: "../images/guide.jpg",
+  imageWin: "../images/win.jpg",
 };
-let level = 1;
-let ran = null; // độ khó mặc định
+let level = 1;  // level default
+let difficultyTime = null; //  time by difficulty
 
-const EASY = 60; // mức dễ
-const MEDIUM = 45; // mức trung bình
-const HARD = 30; // mức khó
+const EASY = 60; // time easy play
+const MEDIUM = 45; // time medium play
+const HARD = 30; // time hard play
 
-// tạo file âm thanh cho game
-let status_music = true;
-const audio = new Audio(
+// declare variable check status music game
+let statusMusic = true;   // status music game
+const audio = new Audio(  // audio system
   "https://audio-previews.elements.envatousercontent.com/files/136199140/preview.mp3"
 );
-const music = new Audio("au.mp3");
-const True = new Audio("tinh.mp3");
-const game = new Setting(audio);
-const dk = new Ran(audio);
-let t = new countDown();
-let tg = null;
+const music = new Audio("../audio/chill.mp3");  // music game
+const selectTrueMusic = new Audio("../audio/trueSelect.mp3"); // audio system when select true
+
+
+const game = new Game(audio);  // declare game
+const difficulty = new Difficulty(audio); 
+let timeDown = new countDown();
+let timeTg = null;  // variable support assign time
 
 // trạng thái game
-let status_ran = true;
-let status_pause = false;
-let status_guide = true;
-let bool = false;
-let status_start = false;
-let again = false;
-let set = new Set();
+let statusDifficulty = true;
+let statusPause = false;
+let statusGuide = true;
+let selectTrue = false;
+let statusGameStart = false;
+let playAgain = false;
+let setProperty = new Set();
 
-// check và hiển thị đáp án đúng, tăng level
+// check select, show result if select true 
 function check() {
-  if (!again) {
-    bool = true;
-    True.play();
-    set.setOpacity('find1', '0.6');
-    set.setOpacity('find2', '0.6');
-    set.setVisibility('pause_game', 'hidden');
+  if (!playAgain) {
+    selectTrue = true;
+    selectTrueMusic.play();
+    setProperty.setOpacity("find1", "0.6");
+    setProperty.setOpacity("find2", "0.6");
+    setProperty.setVisibility("pause_game", "hidden");
     setTimeout(function () {
-      set.setVisibility('pause_game', 'visible');
-      set.setContent('pause_game', 'Next');
+      setProperty.setVisibility("pause_game", "visible");
+      setProperty.setContent("pause_game", "Next");
       level++;
-    }, 3000);
+    }, 1000);
   }
 }
